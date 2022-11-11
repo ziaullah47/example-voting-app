@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "zia-3d65"
+    labels:
+        app: "zia-3d65"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: ingress-nginx-zia-3d65.a745fce7093042b59965.southcentralus.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "zia-3d65"
+                servicePort: 80
