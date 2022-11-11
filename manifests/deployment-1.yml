@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "zia-3d65"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "zia-3d65"
+  template:
+    metadata:
+      labels:
+        app: "zia-3d65"
+    spec:
+      containers:
+        - name: "zia-3d65"
+          image: "vmpods.azurecr.io/zia"
+          ports:
+          - containerPort: 80
